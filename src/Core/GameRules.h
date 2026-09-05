@@ -10,6 +10,10 @@
 
 
 class GameRules {
+public:
+    static void CheckLoseCondition();
+
+    static void CheckWinCondition();
 };
 
 

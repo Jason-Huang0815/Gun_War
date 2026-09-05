@@ -7,9 +7,18 @@
 
 #ifndef GUNWAR_RENDERSYSTEM_H
 #define GUNWAR_RENDERSYSTEM_H
+#pragma once
 
+class GameState;
 
 class RenderSystem {
+private:
+    GameState &m_state;
+
+public:
+    explicit RenderSystem(GameState &state);
+
+    void render();
 };
 
 

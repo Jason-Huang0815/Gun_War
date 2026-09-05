@@ -7,9 +7,18 @@
 
 #ifndef GUNWAR_PHYSICSSYSTEM_H
 #define GUNWAR_PHYSICSSYSTEM_H
+#pragma once
 
+class GameState;
 
 class PhysicsSystem {
+private:
+    GameState &m_state;
+
+public:
+    explicit PhysicsSystem(GameState &state);
+
+    void update(float dt);
 };
 
 

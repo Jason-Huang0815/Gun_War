@@ -7,9 +7,18 @@
 
 #ifndef GUNWAR_INPUTSYSTEM_H
 #define GUNWAR_INPUTSYSTEM_H
+#pragma once
 
+class GameState;
 
 class InputSystem {
+private:
+    GameState &m_state;
+
+public:
+    explicit InputSystem(GameState &state);
+
+    void update(float dt);
 };
 
 
