@@ -15,10 +15,14 @@ class RenderSystem {
 private:
     GameState &m_state;
 
+    void _drawObstacles() const;
+
+    void _drawSpace() const;
+
 public:
     explicit RenderSystem(GameState &state);
 
-    void render();
+    void render() const;
 };
 
 
