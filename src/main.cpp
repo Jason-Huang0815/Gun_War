@@ -4,3 +4,10 @@ int main() {
     game.run();
     return 0;
 }
+
+/**
+ * missions:
+ * Light
+ * Jump and squad
+ * Check collision
+ */

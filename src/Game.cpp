@@ -11,7 +11,7 @@ Game::Game() {
     m_input=std::make_unique<InputSystem>(*m_state);
     m_physics=std::make_unique<PhysicsSystem>(*m_state);
     m_render=std::make_unique<RenderSystem>(*m_state);
-    InitWindow(m_state->Screen.width,m_state->Screen.height,"GunWar");
+    InitWindow(m_state->screen.width,m_state->screen.height,"GunWar");
     SetTargetFPS(60);
     m_state->initCamera();
 }
