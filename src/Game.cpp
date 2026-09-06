@@ -43,7 +43,7 @@ void Game::_update(const float dt) const {
 void Game::_render() const {
     UpdateCamera(&m_state->camera,CAMERA_FIRST_PERSON);
     BeginDrawing();
-    ClearBackground(DARKGRAY);
+    ClearBackground(SKYBLUE);
         BeginMode3D(m_state->camera);
             m_render->render();
         EndMode3D();

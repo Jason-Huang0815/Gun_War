@@ -12,7 +12,7 @@ void RenderSystem::render() const {
 }
 
 void RenderSystem::_drawSpace() const {
-    DrawPlane(m_state.space.centre, m_state.space.size,WHITE);
+    DrawPlane(m_state.space.centre, m_state.space.size,BROWN);
 }
 
 void RenderSystem::_drawObstacles() const {
@@ -22,10 +22,10 @@ void RenderSystem::_drawObstacles() const {
             for (int k = 1; k <= m_state.obstacles[count].layer; k++) {
                 const float cubeX = i * m_state.obstacles[count].length;
                 const float cubeZ = j * m_state.obstacles[count].width;
-                const float cubeY = k * m_state.obstacles[count].height + m_state.obstacles[count].height / 2;
+                const float cubeY = (k-1) * m_state.obstacles[count].height + m_state.obstacles[count].height / 2;
                 DrawCube({cubeX, cubeY, cubeZ},
                          m_state.obstacles[count].width, m_state.obstacles[count].height,
-                         m_state.obstacles[count].length,RED);
+                         m_state.obstacles[count].length,WHITE);
                 DrawCubeWires({cubeX, cubeY, cubeZ},
                          m_state.obstacles[count].width, m_state.obstacles[count].height,
                          m_state.obstacles[count].length,BLACK);
