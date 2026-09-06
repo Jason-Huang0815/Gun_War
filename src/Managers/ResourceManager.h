@@ -7,9 +7,13 @@
 
 #ifndef GUNWAR_RESOURCEMANAGER_H
 #define GUNWAR_RESOURCEMANAGER_H
+#include "raylib.h"
 
 
 class ResourceManager {
+public:
+
+    static Shader loadShader(const char *vsPath, const char *fsPath) ;
 };
 
 

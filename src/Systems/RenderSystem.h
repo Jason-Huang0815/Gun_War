@@ -15,6 +15,8 @@ class RenderSystem {
 private:
     GameState &m_state;
 
+    void _drawLight() const;
+
     void _drawObstacles() const;
 
     void _drawSpace() const;

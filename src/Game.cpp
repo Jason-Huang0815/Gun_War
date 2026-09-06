@@ -12,6 +12,7 @@ Game::Game() {
     m_physics=std::make_unique<PhysicsSystem>(*m_state);
     m_render=std::make_unique<RenderSystem>(*m_state);
     InitWindow(m_state->screen.width,m_state->screen.height,"GunWar");
+    SetTraceLogLevel(LOG_DEBUG);
     SetTargetFPS(60);
     m_state->initCamera();
 }

@@ -11,6 +11,7 @@
 #include <random>
 #include<raylib.h>
 #include <vector>
+#include "../Managers/ResourceManager.h"
 
 enum Status {
     READY, PLAYING, FAIL, VICTORY
@@ -45,11 +46,18 @@ public:
         int height = 7;
     } player;
 
+    struct {
+        const char *fsPath = "../resources/lighting.fs";
+        const char *vsPath = "../resources/lighting.vs";
+        Vector3 position = {.x = 5, .y = 20, .z = 5};
+        Color color = WHITE;
+    } light;
 
     Motion motion = STAND;
     Status status = READY;
     Camera3D camera{};
     std::vector<Obstacle> obstacles;
+    Shader shader;
 
     void reset() {
         screen.width = GetScreenWidth();
@@ -59,6 +67,7 @@ public:
         player.height = 3;
         motion = STAND;
         initObstacles();
+        initShader();
     }
 
     void initCamera() {
@@ -79,6 +88,11 @@ public:
             obstacle.layer = static_cast<int>(dis(gen));
             obstacles.emplace_back(obstacle);
         }
+    }
+
+    void initShader() {
+        shader = ResourceManager::loadShader(light.vsPath, light.fsPath);
+        shader.locs[SHADER_LOC_VECTOR_VIEW] = GetShaderLocation(shader, "viewPos");
     }
 };
 
