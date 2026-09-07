@@ -21,6 +21,8 @@ private:
 
     void _drawSpace() const;
 
+    void _drawPerson() const;
+
 public:
     explicit RenderSystem(GameState &state);
 

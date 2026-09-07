@@ -50,7 +50,7 @@ public:
         const char *fsPath = "../resources/lighting.fs";
         const char *vsPath = "../resources/lighting.vs";
         Vector3 position = {.x = 5, .y = 20, .z = 5};
-        Color color = WHITE;
+        Color color = ORANGE;
     } light;
 
     Motion motion = STAND;

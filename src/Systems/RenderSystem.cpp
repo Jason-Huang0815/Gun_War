@@ -17,6 +17,7 @@ void RenderSystem::render() const {
     BeginShaderMode(m_state.shader);
     _drawSpace();
     _drawObstacles();
+    _drawPerson();
     EndShaderMode();
 }
 
@@ -54,4 +55,10 @@ void RenderSystem::_drawObstacles() const {
             count++;
         }
     }
+}
+
+void RenderSystem::_drawPerson() const {
+    const float height=m_state.camera.position.y-3.50;
+    DrawCube({.x = m_state.camera.position.x, .y = height, .z = m_state.camera.position.z},
+        m_state.player.width,m_state.player.height,m_state.player.length,GREEN);
 }
