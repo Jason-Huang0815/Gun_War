@@ -8,6 +8,7 @@
 #ifndef GUNWAR_INPUTSYSTEM_H
 #define GUNWAR_INPUTSYSTEM_H
 #pragma once
+#include "raylib.h"
 
 class GameState;
 
@@ -18,7 +19,7 @@ private:
 public:
     explicit InputSystem(GameState &state);
 
-    void update(float dt);
+    void update(float dt) const;
 };
 
 
