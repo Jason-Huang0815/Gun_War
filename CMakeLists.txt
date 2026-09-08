@@ -21,6 +21,7 @@ add_executable(GunWar
         src/Systems/RenderSystem.cpp
         src/Systems/RenderSystem.h
         raylib-6.0/include/rlight.h
+        #test.cpp
 
 )
 target_include_directories(GunWar PRIVATE

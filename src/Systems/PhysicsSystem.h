@@ -17,9 +17,11 @@ private:
     GameState &m_state;
     float m_gravity = 18.0f;
     float m_velocity = 9.0f;
-    int m_originHeight = m_state.player.height;
+    float m_originHeight = m_state.player.height;
 
     void _jump(float dt);
+
+    void _squad() const;
 
 public:
     explicit PhysicsSystem(GameState &state);
